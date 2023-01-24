@@ -1,5 +1,6 @@
 import gzip
 import numpy as np
+import download
 
 
 number_of_agents = 4
@@ -68,6 +69,12 @@ def unpack_example(data, number_of_agents, number_of_obstacles, map_rows):
 
 def load_data():
     data = []
+    
+    print('Downloading dataset...')
+    
+    download.download('https://github.com/oelin/darp-46k/raw/main/dataset.gz')
+    
+    print('Extracting...')
     
     with open('./dataset.gz', 'rb') as file:
         content = file.read()
