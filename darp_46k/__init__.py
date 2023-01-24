@@ -72,7 +72,7 @@ def load_data():
     
     print('Downloading dataset...')
     
-    download.download('https://github.com/oelin/darp-46k/raw/main/dataset.gz')
+    download.download('https://github.com/oelin/darp-46k/raw/main/dataset.gz', './dataset.gz')
     
     print('Extracting...')
     
