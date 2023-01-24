@@ -1,4 +1,11 @@
 import gzip
+import numpy as np
+
+
+number_of_agents = 4
+number_of_obstacles = 10
+map_rows = 10
+packed_example_size = 64
 
 
 def unpack_example(data, number_of_agents, number_of_obstacles, map_rows):
@@ -59,13 +66,7 @@ def unpack_example(data, number_of_agents, number_of_obstacles, map_rows):
     )
 
 
-number_of_agents = 4
-number_of_obstacles = 10
-map_rows = 10
-packed_example_size = 64
-
-
-def extract_dataset():
+def load_data():
     data = []
     
     with open('./dataset.gz', 'rb') as file:
