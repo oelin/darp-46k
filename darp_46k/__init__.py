@@ -111,5 +111,7 @@ def load_data():
         
             if ((i + 1) % 10_000) == 0:
                 print(f'Extracted {i+1}/{number_of_examples} examples.')
-     
+    
+    print('Dataset loaded successfully.')
+    
     return data
