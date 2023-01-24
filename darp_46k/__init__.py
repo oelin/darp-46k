@@ -74,7 +74,7 @@ def load_data():
         content = gzip.decompress(content)
         
         assert len(content) % packed_example_size == 0
-        number_of_examples = len(content) // packaged_example_size 
+        number_of_examples = len(content) // packed_example_size 
         
         for i in range(number_of_examples):
         
