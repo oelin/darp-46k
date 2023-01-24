@@ -1,3 +1,6 @@
+import gzip
+
+
 def unpack_example(data, number_of_agents, number_of_obstacles, map_rows):
 
     final_array = bytes_to_bitstring(data)
@@ -67,6 +70,8 @@ def extract_dataset():
     
     with open('./dataset.gz', 'rb') as file:
         content = file.read()
+        content = gzip.decompress(content)
+        
         assert len(content) % packed_example_size == 0
         number_of_examples = len(content) // packaged_example_size 
         
