@@ -1,3 +1,4 @@
+[tool.poetry]
 name = "darp-46k"
 version = "0.1.0"
 description = ""
