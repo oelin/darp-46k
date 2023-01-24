@@ -9,6 +9,24 @@ map_rows = 10
 packed_example_size = 64
 
 
+def bitstring_to_bytes(s):
+    b = []
+
+    for i in range(0, len(s), 8):
+        b.append(int(s[i : i + 8], 2))
+    
+    return bytes(b)
+
+
+def bytes_to_bitstring(s):
+    bits = ''
+
+    for byte in s:
+        bits += '{:08b}'.format(int(byte))
+    
+    return bits
+
+
 def unpack_example(data, number_of_agents, number_of_obstacles, map_rows):
 
     final_array = bytes_to_bitstring(data)
