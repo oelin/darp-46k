@@ -18,7 +18,7 @@ def unpack_example(data, number_of_agents, number_of_obstacles, map_rows):
         x = int(final_array[i : i + element_size], 2)
         y = int(final_array[i + element_size : i + element_size * 2], 2)
         
-        agent_positions.append(DARPCoordinate(x, y))
+        agent_positions.append((y, x))
     
     final_array = final_array[agent_positions_length :]
 
@@ -85,5 +85,4 @@ def extract_dataset():
             if ((i + 1) % 10_000) == 0:
                 print(f'Extracted {i+1}/{number_of_examples} examples.')
      
-     return data
-                
+    return data
